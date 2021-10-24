@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Admin{% endblock title %}
+{% block body %}
+<ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/logout">Logout</a></li>
+  </ul>
+</div>
+
+<!-- Content -->
+<div class="content">
+    <!-- Tagline -->
+    <div class="tagline">
+      <h1 class="header">{{ count }}</h1>
+      <h1 class="subheader">APPLICANTS</h1>
+      <h1 class="subheader">REGISTERED</h1>
+      <h5 class="midtext" style>
+        Welcome to the home page.
+        This page will help in accessing and updating the details of the database.
+        This access is allowed only to the ADMIN.
+      </h5>
+      <!-- Button -->
+      <div>
+        <a href="/database" class="get-started-button">View Database</a>
+      </div>
+      <!-- Button -->
+    </div>
+    <!-- Tagline -->
+
+    <!-- Animation -->
+    <div class="picture">
+      <dotlottie-player src="https://assets3.lottiefiles.com/dotlotties/dlf10_q0vtqaxf.lottie"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></dotlottie-player>
+    </div>
+    <!-- Animation -->
+  </div>
+
+  <!-- Content -->
+  <!-- Container -->
+
+{% endblock body %}

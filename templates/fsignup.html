@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% block title %} Signup {% endblock title %}
+{% block body %}
+<ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/login">Login</a></li>
+    <li><a href="/signup">Signup</a></li>
+  </ul>
+</div>
+
+<div class="container-2">
+    <div class="form-container">
+        <div class="left-container">
+            <h1 class="form-heading">Register</h1>
+            <form action="/signup/{{ path }}" method="POST" class="login-form">
+                {% if error %}
+                    <span class="error-message">
+                            <p>{{ error }}</p>
+                    </span>
+                {% endif %}
+                <div class="input-field">
+                    <input type="text" name="firstname" id="firstname" value="{{ inputs['fname'] }}" required autofocus>
+                    <span></span>
+                    <label for="firstname">First Name</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" name="lastname" id="lastname" value="{{ inputs['lname'] }}" required>
+                    <span></span>
+                    <label for="lastname">Last Name</label>
+                </div>
+                <div class="gender-field">
+                    <p>Gender:</p>
+                    <div class="radio-input">
+                        <div class="ri">
+                            <input type="radio" name="gender" id="male" value='Male' required>
+                            <label for="male">Male</label>
+                        </div>
+                        <div class="ri">
+                            <input type="radio" name="gender" id="female" value='Female' required>
+                            <label for="female">Female</label>
+                        </div>
+                        <div class="ri">
+                            <input type="radio" name="gender" id="null" value='{{ None }}' required>
+                            <label for="null">Prefer not to say</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="inp-field">
+                    <p>Date of Birth:</p>
+                    <input type="date" name="DOB" id="DOB" max="{{ maxdate }}" value="{{ inputs['dob'] }}" required>
+                </div>
+                <div class="input-field">
+                    <input type="tel" name="phone" id="phone" value="{{ inputs['phone'] }}" required>
+                    <span></span>
+                    <label for="phone">Phone</label>
+                </div>
+
+                {% if path == "applicant" %}
+                    <div class="inp-field">
+                        <p>Weight (in kg):</p>
+                        <input type="number" name="weight" id="weight" min="50" step="0.01" value="{{ inputs['weight'] }}" required>
+                    </div>
+                    <div class="inp-field">
+                        <p>Height (in cm):</p>
+                        <input type="number" name="height" id="height" min="150" step="0.01" value="{{ inputs['height'] }}" required>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" name="pastdiseases" id="pastdiseases" value="{{ inputs['pastdiseases'] }}" required>
+                        <span></span>
+                        <label for="pastdiseases">Past Diseases</label>
+                    </div>
+                    <div class="inp-field">
+                        <p>How many times have you donated blood before:</p>
+                        <input type="number" name="blood" id="blood" min="0" value="{{ inputs['blood'] }}" required>
+                    </div>
+                
+                {% elif path == "doctor"%}
+                    <div class="inp-field">
+                        <p>Salary:</p>
+                        <input type="number" name="salary" id="salary" min="1" value="{{ inputs['salary'] }}" required>
+                    </div>
+                    <div class="inp-field">
+                        <p>Department:</p>
+                        <select id="department" name="department" required>
+                            <option value="{{ None }}">Select</option>
+                            <option value="Anesthetics">Anesthetics</option>
+                            <option value="Cardiology">Cardiology</option>
+                            <option value="Ear, nose and throat (ENT)">Ear, nose and throat (ENT)</option>
+                            <option value="General Surgery">General Surgery</option>
+                            <option value="Gynecology">Gynecology</option>
+                            <option value="Hematology">Hematology</option>
+                            <option value="Neurology">Neurology</option>
+                            <option value="Physiotherapy">Physiotherapy</option>
+                            <option value="Nutrition and Dietetics">Nutrition and Dietetics</option>
+                            <option value="Orthopedics">Orthopedics</option>
+                        </select>
+                    </div>
+                {% endif %}
+                <div class="input-field">
+                    <input type="text" name="username" id="username" value="{{ inputs['uname'] }}" maxlength="15" required>
+                    <span></span>
+                    <label for="username">Username</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" name="password" id="password" value="{{ inputs['pwd'] }}" maxlength="15" required>
+                    <span></span>
+                    <label for="password">Password</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" name="confirm-password" id="confirm-password" value="{{ inputs['cpwd'] }}" maxlength="15" required>
+                    <span></span>
+                    <label for="confirm-password">Confirm Password</label>
+                </div>
+
+                <input type="submit" value="Register" class="submit-button">
+            </form>
+            <div class="sign">
+                <p>Already a user? <a href="/login">Login</a></p>
+            </div>
+        </div>
+        <div class="right-container">
+            <h1>"Best among all is the one who helps others"</h1>
+        </div>
+    </div>
+</div>
+{% endblock body %}

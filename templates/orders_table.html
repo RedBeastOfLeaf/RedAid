@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %} Admin {% endblock title %}
+{% block body %}
+<ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/logout">Logout</a></li>
+  </ul>
+</div>
+<!-- Navbar -->
+
+<div class="container-3">
+    {% if l == True %}
+        <div class="table">
+            <table>
+                <thead>
+                    <th>SNo</th>
+                    <th>Doctor Name</th>
+                    <th>Blood Group</th>
+                    <th>Blood Quantity</th>
+                    <th>Phone Number</th>
+                    <th>Status</th>
+                </thead>
+                <tbody>
+                    {% for O,D,DPH in ord %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ D.first_name + ' ' + D.last_name }}</td>
+                        <td>{{ O.blood_type }}</td>
+                        <td>{{ O.blood_quantity }}</td>
+                        <td>{{ DPH.doctor_phno }}</td>
+                        <td>
+                            <a href="/complete/{{ staff_id }}/{{ O.order_id }}" class="complete-button">Complete</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% elif l == False %}
+        <h1 class="no-orders">No Orders at the moment, please come back later.</h1>
+    {% endif %}
+</div>
+
+{% endblock body %}

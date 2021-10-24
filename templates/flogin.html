@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %} Login {% endblock title %}
+{% block body %}
+<ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/login">Login</a></li>
+    <li><a href="/signup">Signup</a></li>
+  </ul>
+</div>
+
+<div class="container-2">
+    <div class="form-container">
+        <div class="left-container">
+            <h1 class="form-heading">Login</h1>
+            <form action="/login/{{ path }}" method="POST" class="login-form">
+                {% if error %}
+                    <span class="error-message">
+                            <p>{{ error }}</p>
+                    </span>
+                {% endif %}
+                <div class="input-field">
+                    <input type="text" name="username" id="username" required autofocus>
+                    <span></span>
+                    <label for="username">Username</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" name="password" id="password" required>
+                    <span></span>
+                    <label for="password">Password</label>
+                </div>
+                <a href="/" class="pass">Forgot Password?</a>
+                <input type="submit" value="login" class="submit-button">
+            </form>
+            <div class="sign">
+                <p>New user? <a href="/signup">Signup</a></p>
+            </div>
+        </div>
+        <div class="right-container">
+            <h1>"Best among all is the one who helps others"</h1>
+        </div>
+    </div>
+</div>
+{% endblock body %}

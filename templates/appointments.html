@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %} Appointment {% endblock title %}
+{% block body %}
+<ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/logout">Logout</a></li>
+  </ul>
+</div>
+
+<div class="container-2">
+    <div class="form-container">
+        <div class="left-container">
+            {% if purpose == 'book' %}
+            <h1 class="form-heading">Book Appointment</h1>
+            <form action="/appointment/{{ applicant_id }}/book" method="POST" class="login-form">
+                <div class="inp-field">
+                    <p>Appointment Date:</p>
+                    <input type="date" name="Appointment" id="Appointment" min="{{ mindate }}" required>
+                </div>
+                <input type="submit" value="Book" class="submit-button">
+            </form>
+            {% elif purpose == 'update' %}
+            <h1 class="form-heading">Update Appointment</h1>
+            <form action="/appointment/{{ applicant_id }}/update" method="POST" class="login-form">
+                <div class="inp-field">
+                    <p>Appointment Date:</p>
+                    <input type="date" name="Appointment" id="Appointment" min="{{ mindate }}" value="{{ d_value }}" required>
+                </div>
+                <input type="submit" value="Update" class="submit-button">
+            </form>
+            {% endif %}
+        </div>
+        <div class="right-container">
+            <h1>"Best among all is the one who helps others"</h1>
+        </div>
+    </div>
+</div>
+{% endblock body %}

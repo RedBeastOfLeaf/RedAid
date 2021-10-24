@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}Applicant{% endblock title %}
+{% block body %}
+<ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/logout">Logout</a></li>
+  </ul>
+</div>
+
+<!-- Content -->
+<div class="content">
+  <!-- Tagline -->
+  <div class="tagline">
+    <h1 class="header">The more YOU</h1>
+    <h1 class="subheader">GIVE</h1>
+    <h1 class="subheader">the more you GET</h1> 
+    <h5 class="midtext" style>
+      <!--<span style="color: rgb(180,0,0); font-size: 1.3em; font-weight: bold">"The more you give the more you get"</span>
+      <br />-->
+      Look for the appointments and requests below.
+    </h5>
+    <!-- Button -->
+    <div>
+      <a href="/staff/{{ staff_id }}/appointments" id="button" class="get-started-button">Appointments</a>
+      &nbsp;
+      <a href="/staff/{{ staff_id }}/orders"  class="get-started-button">Order Status</a>
+    </div>
+    <!-- Button -->
+  </div>
+  <!-- Tagline -->
+
+  <!-- Animation -->
+  <div class="picture">
+    <lottie-player src="https://assets6.lottiefiles.com/temp/lf20_R7WisW.json" background="transparent" speed="1"
+      style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+  </div>
+  
+  <!-- Animation -->
+</div>
+
+
+
+<!-- Content -->
+
+
+{% endblock body %}

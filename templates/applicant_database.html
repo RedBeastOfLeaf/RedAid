@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %} Admin {% endblock title %}
+{% block body %}
+<ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/logout">Logout</a></li>
+  </ul>
+</div>
+<!-- Navbar -->
+
+<div class="container-3">
+    <div class="table">
+        <table>
+            <thead>
+                <th>SNo</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Gender</th>
+                <th>Birthdate</th>
+                <th>Age</th>
+                <th>Past Diseases</th>
+                <th>Times Blood Donated</th>
+                <th>BMI</th>
+            </thead>
+            <tbody>
+                {% for A,AM,AW in all %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ A.first_name }}</td>
+                    <td>{{ A.last_name }}</td>
+                    <td>{{ A.applicant_gender }}</td>
+                    <td>{{ A.birthdate }}</td>
+                    <td>{{ A.age }}</td>
+                    <td>{{ AM.past_diseases }}</td>
+                    <td>{{ AM.blood_donated }}</td>
+                    <td>{{ AW.BMI }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock body %}

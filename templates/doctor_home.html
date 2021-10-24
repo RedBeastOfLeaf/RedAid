@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Applicant{% endblock title %}
+{% block body %}
+<ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/logout">Logout</a></li>
+  </ul>
+</div>
+
+
+<!-- Content -->
+<div class="content">
+  <!-- Tagline -->
+  <div class="tagline">
+    <h1 class="header">HEY</h1>
+    <h1 class="subheader">THERE</h1>
+    <h1 class="subheader">DOC!</h1>
+    <h5 class="midtext" style>
+      <span style="color: rgb(180,0,0); font-size: 1.3em; font-weight: bold">"Medicine cures dieseas but only doctors can cure patients"</span>
+      <br/>
+      Order a fresh batch by clicking below.
+    </h5>
+    <!-- Button -->
+    <div>
+      <a href="/request/{{ doctor_id }}" class="get-started-button">Request a fresh batch</a>
+    </div>
+    <!-- Button -->
+  </div>
+  <!-- Tagline -->
+
+  <!-- Animation -->
+  <div class="picture">
+    <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_wcqmeclm.json" background="transparent" speed="1" style="width: 400px; height: 400px;" loop autoplay></lottie-player>
+  </div>
+  <!-- Animation -->
+</div>
+
+<!-- Content -->
+
+{% endblock body %}

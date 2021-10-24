@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock title %}
+{% block body %}
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+
+        {% if fuser %}
+          <li><a href="/login">{{ fuser }}</a></li>
+
+        {% else %}
+          <li><a href="/login">Login</a></li>
+          <li><a href="/signup">Signup</a></li>
+        {% endif %}
+      </ul>
+    </div>
+    <!-- Navbar -->
+
+    <!-- Content -->
+    <div class="content">
+      <!-- Tagline -->
+      <div class="tagline">
+        <h1 class="header">#</h1>
+        <h1 class="subheader">EVERYONE CAN</h1>
+        <h1 class="subheader">BE A HERO</h1>
+        <h5 class="midtext" style>
+          Selfless? Check! Helpful? Check! Inspirational? Double-check! <br />
+          You have all the qualities we need to see more of in this world. So
+          hop on, get your cape out and start perfecting your catch phrase!!
+        </h5>
+        <!-- Button -->
+        {% if fuser %}
+          
+        {% else %}
+        <div>
+          <a href="/signup" class="get-started-button">Get Started</a>
+        </div>
+        {% endif %}
+        <!-- Button -->
+      </div>
+      <!-- Tagline -->
+
+      <!-- Animation -->
+      <div class="picture">
+        <lottie-player
+          src="https://assets8.lottiefiles.com/packages/lf20_2ajirrbi.json"
+          background="transparent"
+          speed="1"
+          style="width: 300px; height: 300px"
+          loop
+          autoplay
+          class="picture"
+        ></lottie-player>
+      </div>
+      <!-- Animation -->
+    </div>
+
+    <!-- Content -->
+    <!-- Container -->
+{% endblock body %}

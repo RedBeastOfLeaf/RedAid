@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        table, thead, tr, th, td{
+            border-collapse: collapse;
+            border: 1px solid;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Sr No</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Gender</th>
+                <th>Birhtdate</th>
+                <th>Age</th>
+            </tr>
+            {% for applicant in appl %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ applicant.first_name }}</td>
+                    <td>{{ applicant.last_name }}</td>
+                    <td>{{ applicant.applicant_gender }}</td>
+                    <td>{{ applicant.birthdate }}</td>
+                    <td>{{ applicant.age }}</td>
+                </tr>
+            {% endfor %}
+        </thead>
+        <tr></tr>
+    </table>
+</body>
+</html>

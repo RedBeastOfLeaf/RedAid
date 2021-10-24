@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock title %}
+{% block body %}
+<ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/login">Login</a></li>
+    <li><a href="/signup">Signup</a></li>
+  </ul>
+</div>
+<!-- Navbar -->
+
+<!-- Content -->
+<div class="container-1">
+  <h1 class="selection-header">Select Appropriate Path</h1>
+    <div class="selection">
+      <a href="/login/applicant" class="cards">
+        <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_rolzk83y.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
+        <h3>Applicant</h3>
+      </a><a href="login/doctor" class="cards">
+        <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_wdXBRc.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
+        <h3>Doctor</h3>
+      </a><a href="login/staff" class="cards">
+        <lottie-player src="https://assets9.lottiefiles.com/private_files/lf30_GbhZ3L.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+        <h3>Staff</h3>
+      </a>
+    </div>
+</div>
+<!-- Content -->
+{% endblock body %}

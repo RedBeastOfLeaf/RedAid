@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}Applicant{% endblock title %}
+{% block body %}
+<ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/logout">Logout</a></li>
+  </ul>
+</div>
+
+<!-- Content -->
+<div class="content">
+  <!-- Tagline -->
+  <div class="tagline">
+    {% if appointment %}
+    <h1 class="header">{{ appointment }}</h1>
+    <h1 class="subheader">DAYS</h1>
+    <h1 class="subheader">REMAINING</h1>
+    <h5 class="midtext" style>
+      Be ready! You have your appointment coming soon, get your cape on and eat something healthy to be at your best!
+    </h5>
+    <!-- Button -->
+    <div>
+      <a href="/appointment/{{ applicant_id }}/update" class="get-started-button">Update Appointment</a>
+    </div>
+    <!-- Button -->
+    {% else %}
+    <h1 class="header">NO</h1>
+    <h1 class="subheader">APPOINTMENT</h1>
+    <h1 class="subheader">BOOKED</h1>
+    <h5 class="midtext" style>
+      You don't have any new appointments.
+      In order to book one click below
+    </h5>
+    <!-- Button -->
+    <div>
+      <a href="/appointment/{{ applicant_id }}/book" class="get-started-button">Book Appointment</a>
+    </div>
+    <!-- Button -->
+    {% endif %}
+  </div>
+  <!-- Tagline -->
+
+  <!-- Animation -->
+  <div class="picture">
+    <lottie-player src="https://assets2.lottiefiles.com/private_files/lf30_BP4Us7.json"  background="transparent"  speed="1"  style="width: 500px; height: 500px;"  loop  autoplay></lottie-player>
+  </div>
+  <!-- Animation -->
+</div>
+
+<!-- Content -->
+
+{% endblock body %}
